@@ -1,0 +1,1253 @@
+@import './fonts.css';
+
+:root {
+  --xr-blue: #405da5;
+  --xr-green: #74bc31;
+  --xr-ink: #182c39;
+  --xr-muted: #61717b;
+  --xr-text-body: 1rem;
+  --xr-text-label: 0.875rem;
+  --xr-text-meta: 0.75rem;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+body {
+  background: #fff !important;
+  color: var(--xr-ink) !important;
+}
+.xr-header,
+.xr-main,
+.xr-footer {
+  font-family: 'Poppins', sans-serif;
+  font-size: var(--xr-text-body);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.xr-main h1,
+.xr-main h2,
+.xr-main h3 {
+  font-family: 'Chakra Petch', sans-serif;
+}
+.xr-main.xa-page h1,
+.xr-main.xa-page h2,
+.xr-main.xc-page h1,
+.xr-main.xc-page h2 {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.xr-main h1,
+.xr-main h2,
+.xr-main h3,
+.xr-main p,
+.xr-footer p {
+  margin: 0;
+}
+.xr-header a,
+.xr-main a,
+.xr-footer a {
+  text-decoration: none;
+}
+.xr-logo img {
+  display: block;
+  width: 185px;
+  height: auto;
+}
+.xr-nav {
+  font-size: var(--xr-text-label);
+  font-weight: 600;
+}
+.xr-nav a {
+  transition: color 0.2s;
+}
+.xr-nav a:hover {
+  color: var(--xr-blue);
+}
+.xr-nav a.xr-nav-contact:hover {
+  background: #304b8d;
+  color: #fff;
+}
+.xr-nav-contact span {
+  margin-left: 25px;
+}
+.xr-hero {
+  background: #123b30;
+  isolation: isolate;
+}
+.xr-hero-photo {
+  inset: 0;
+  background: url('/xinrong/field.webp') center 54%/cover;
+}
+.xr-hero:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #082e22;
+  opacity: 0.3;
+  z-index: -1;
+}
+.xr-hero-intro {
+  font-size: var(--xr-text-meta);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.xr-hero h1 {
+  font-size: clamp(3.5rem, 6vw, 5.5rem);
+  line-height: 1.04;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  margin: 28px 0 28px;
+}
+.xr-hero-description {
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.xr-button {
+  font-size: var(--xr-text-label);
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  cursor: pointer;
+  border: 0;
+}
+.xr-button:hover {
+  transform: translateY(-2px);
+}
+.xr-button-green {
+  color: #142b18;
+}
+.xr-button-green:hover {
+  background: #8dcc50;
+}
+.xr-hero-bottom {
+  font-size: var(--xr-text-meta);
+  letter-spacing: 0.1em;
+}
+.xr-hero-bottom a {
+  font-size: var(--xr-text-label);
+  letter-spacing: 0;
+}
+.xr-hero-bottom a span {
+  display: inline-block;
+  margin-left: 25px;
+  font-size: 1.5rem;
+}
+.xr-main h2 {
+  font-size: clamp(2rem, 1.25rem + 2vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+.xr-intro h2 span {
+  color: #83909a;
+}
+.xr-intro p {
+  font-size: 1.125rem;
+  color: var(--xr-muted);
+  max-width: 450px;
+}
+.xr-text-link {
+  font-size: var(--xr-text-label);
+  font-weight: 600;
+}
+.xr-text-link:hover {
+  color: #233b70;
+}
+.xr-products {
+  background: #f2f5f6;
+}
+.xr-section-heading > p {
+  font-size: var(--xr-text-body);
+  color: var(--xr-muted);
+}
+.xr-product-tabs button {
+  padding: 18px 14px;
+  font-size: var(--xr-text-label);
+  text-align: left;
+  background: #e6ebef;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+  color: #435564;
+}
+.xr-product-tabs button:hover {
+  background: #d7e1e7;
+}
+.xr-product-tabs button[aria-pressed='true'] {
+  background: var(--xr-blue);
+  color: white;
+}
+.xr-product-visual {
+  background: #eaf0f2;
+}
+.xr-product-drawing {
+  transition: transform 0.4s;
+}
+.xr-product-visual:hover svg {
+  transform: scale(1.025);
+}
+.xr-product-visual > span {
+  font-size: var(--xr-text-meta);
+  color: #6a7b84;
+  padding: 0 15px 18px;
+}
+.xr-small-title {
+  font-size: var(--xr-text-meta);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.xr-main h3 {
+  font-size: clamp(1.5rem, 1.1rem + 1vw, 1.875rem);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.xr-product-copy h3 {
+  margin: 0 0 18px;
+}
+.xr-product-copy > p:not(.xr-small-title) {
+  color: var(--xr-muted);
+  font-size: var(--xr-text-body);
+}
+.xr-cross {
+  font-size: 2.8125rem;
+  line-height: 1;
+}
+.xr-application-grid p {
+  color: var(--xr-muted);
+  font-size: var(--xr-text-body);
+  margin: 18px 0 24px;
+  max-width: 330px;
+}
+.xr-application-grid a {
+  color: var(--xr-blue);
+  font-size: var(--xr-text-label);
+  font-weight: 600;
+}
+.xr-about-brand {
+  background: #ecf1f5;
+}
+.xr-about-brand svg {
+  width: 68%;
+  color: #405da5;
+}
+.xr-about-brand > span {
+  position: absolute;
+  bottom: 30px;
+  left: 35px;
+  font-size: var(--xr-text-label);
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--xr-blue);
+}
+.xr-about h2 {
+  margin: 24px 0;
+}
+.xr-about-copy > p:not(.xr-small-title) {
+  font-size: var(--xr-text-body);
+  color: #e0e6f3;
+  margin-bottom: 18px;
+}
+.xr-contact .xr-small-title {
+  color: var(--xr-blue);
+}
+.xr-contact h2 {
+  margin: 23px 0;
+}
+.xr-contact > div > p:not(.xr-small-title) {
+  font-size: var(--xr-text-body);
+  color: var(--xr-muted);
+  max-width: 350px;
+}
+.xr-contact-note > span {
+  font-size: 2.125rem;
+  color: var(--xr-green);
+}
+.xr-contact-note p {
+  font-size: var(--xr-text-label);
+  color: var(--xr-muted);
+}
+.xr-inquiry-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: var(--xr-text-label);
+  font-weight: 600;
+}
+.xr-inquiry-form input,
+.xr-inquiry-form select,
+.xr-inquiry-form textarea {
+  border: 1px solid #d4dce1;
+  border-radius: 0;
+  padding: 13px 14px;
+  min-width: 0;
+  width: 100%;
+  background: white;
+  color: #243b48;
+  font-size: var(--xr-text-body);
+  font-weight: 400;
+}
+.xr-inquiry-form textarea {
+  resize: vertical;
+}
+.xr-inquiry-form ::placeholder {
+  color: #8b969e;
+}
+.xr-form-bottom p {
+  font-size: var(--xr-text-meta);
+  color: var(--xr-muted);
+  max-width: 210px;
+}
+.xr-button-blue {
+  white-space: nowrap;
+}
+.xr-button:disabled {
+  opacity: 0.65;
+  cursor: default;
+  transform: none;
+}
+.xr-form-message {
+  font-size: var(--xr-text-body);
+  background: #eef3f8;
+}
+.xr-footer {
+  background: #132d3c;
+}
+.xr-footer-name {
+  font-size: clamp(2rem, 5.5vw, 5.125rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+.xr-footer-name > span {
+  font-size: var(--xr-text-label);
+  vertical-align: top;
+  letter-spacing: 0;
+}
+.xr-footer-top p {
+  font-size: var(--xr-text-body);
+  color: #c5d1d9;
+}
+.xr-footer-top > a:last-child {
+  font-size: var(--xr-text-label);
+  color: #a9d67e;
+}
+.xr-footer-bottom {
+  font-size: var(--xr-text-meta);
+  color: #a1b3bf;
+}
+.xr-header :focus-visible,
+.xr-main :focus-visible,
+.xr-footer :focus-visible {
+  outline: 3px solid #74bc31;
+  outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .xr-logo img {
+    width: 155px;
+  }
+  .xr-product-tabs button {
+    font-size: var(--xr-text-label);
+    padding: 15px 10px;
+  }
+}
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 75px;
+  }
+  .xr-logo img {
+    width: 142px;
+  }
+  .xr-menu {
+    font-size: var(--xr-text-label);
+    font-weight: 600;
+    color: var(--xr-blue);
+    background: none;
+    border: 0;
+    cursor: pointer;
+  }
+  .xr-nav {
+    background: #fff;
+    align-items: stretch;
+  }
+  .xr-nav.is-open {
+    display: flex;
+  }
+  .xr-nav a {
+    padding: 14px 0;
+  }
+  .xr-nav .xr-nav-contact {
+    margin: 10px 0 0;
+    padding: 15px 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .xr-hero-photo {
+    background-position: 60% center;
+  }
+  .xr-hero:after {
+    opacity: 0.43;
+  }
+  .xr-hero-intro {
+    font-size: var(--xr-text-meta);
+    line-height: 1.7;
+    letter-spacing: 0.1em;
+  }
+  .xr-hero h1 {
+    font-size: clamp(2.25rem, 10vw, 3.25rem);
+    letter-spacing: -0.035em;
+    margin-top: 28px;
+  }
+  .xr-hero-description {
+    font-size: var(--xr-text-body);
+  }
+  .xr-hero-bottom > span {
+    display: none;
+  }
+  .xr-hero-bottom a {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .xr-main h2 {
+    font-size: clamp(1.75rem, 7.5vw, 2rem);
+    letter-spacing: -0.025em;
+  }
+  .xr-intro p {
+    font-size: var(--xr-text-body);
+  }
+  .xr-section-heading > p {
+    margin-top: 20px;
+    font-size: var(--xr-text-body);
+  }
+  .xr-product-tabs {
+    scroll-snap-type: x mandatory;
+  }
+  .xr-product-tabs button {
+    min-width: 162px;
+    font-size: var(--xr-text-label);
+    scroll-snap-align: start;
+  }
+  .xr-product-copy h3 {
+    font-size: 1.625rem;
+  }
+  .xr-application-grid article {
+    position: relative;
+    padding-left: 48px;
+  }
+  .xr-cross {
+    font-size: 2.8125rem;
+  }
+  .xr-main .xr-application-grid h3 {
+    font-size: 1.5rem;
+  }
+  .xr-application-grid p {
+    margin: 12px 0 18px;
+    max-width: none;
+  }
+  .xr-about-brand svg {
+    width: 45%;
+    max-height: 230px;
+  }
+  .xr-about-brand > span {
+    font-size: var(--xr-text-label);
+    bottom: 20px;
+    left: 6%;
+  }
+  .xr-about h2 {
+    font-size: clamp(1.75rem, 7.5vw, 2rem);
+  }
+  .xr-form-bottom p {
+    max-width: none;
+  }
+  .xr-form-bottom button {
+    width: 100%;
+  }
+  .xr-footer-name {
+    font-size: 3.375rem;
+    letter-spacing: -0.035em;
+  }
+  .xr-footer-top p {
+    margin: 25px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .xr-main *,
+  .xr-header * {
+    transition: none !important;
+  }
+}
+
+/* Reading rhythm and role limits apply only to the XINRONG marketing surface. */
+.xr-main p {
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+.xr-hero-description {
+  max-width: 46ch;
+}
+.xr-intro p,
+.xr-about-copy > p {
+  max-width: 60ch;
+}
+.xr-product-copy > p {
+  max-width: 45ch;
+}
+.xr-product-copy dl {
+  line-height: 1.6;
+}
+.xr-product-copy h4 {
+  line-height: 1.4;
+}
+.xr-product-copy h4 + p {
+  margin-top: 0.5rem;
+}
+.xr-nav,
+.xr-product-tabs button,
+.xr-button {
+  line-height: 1.4;
+}
+.xr-product-tabs button {
+  overflow-wrap: anywhere;
+}
+.xr-inquiry-form input,
+.xr-inquiry-form select,
+.xr-inquiry-form textarea {
+  line-height: 1.5;
+  font-family: inherit;
+}
+.xr-inquiry-form ::placeholder {
+  color: #61717b;
+}
+.xr-main ::selection,
+.xr-header ::selection,
+.xr-footer ::selection {
+  background: #d8e9f7;
+  color: #182c39;
+}
+.xr-main input,
+.xr-main textarea {
+  caret-color: var(--xr-blue);
+}
+.xr-footer-name {
+  font-weight: 700;
+}
+.xr-about-copy dd {
+  line-height: 1.65;
+}
+@media (max-width: 700px) {
+  .xr-button,
+  .xr-text-link {
+    white-space: normal;
+  }
+  .xr-about-copy h2 br,
+  .xr-intro h2 br {
+    display: none;
+  }
+}
+
+/* Indust composition adapted to XINRONG's product range and brand. */
+.xr-indust {
+  --xi-navy: #1d3960;
+  --xi-ground: #f2f5fb;
+  background: var(--xi-ground);
+  background-image: linear-gradient(90deg, transparent calc(100% - 1px), #1d396008 0);
+  background-size: 25% 100%;
+}
+.xi-wrap {
+  width: 88%;
+  max-width: 1720px;
+  margin-inline: auto;
+}
+.xi-section {
+  padding-block: 110px;
+}
+.xr-indust h2 {
+  font-size: clamp(2rem, 3.4vw, 3.8rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+.xr-indust p {
+  color: var(--xr-muted);
+}
+.xr-indust .xi-eyebrow {
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  color: var(--xr-blue);
+  margin-bottom: 24px;
+}
+.xi-hero {
+  position: relative;
+  isolation: isolate;
+  padding-top: 65px;
+}
+.xi-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 180px;
+  z-index: -1;
+  background: var(--xi-navy);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.xi-hero-heading {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  align-items: end;
+  gap: 9%;
+  padding-bottom: 52px;
+}
+.xr-indust .xi-hero h1 {
+  font-size: clamp(3.4rem, 5.6vw, 6.8rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  color: white;
+  margin: 0;
+}
+.xi-hero h1 span {
+  font-weight: 350;
+}
+.xr-indust .xi-hero-heading p {
+  color: #d5dfeb;
+  max-width: 390px;
+  padding-bottom: 6px;
+  font-size: 16px;
+}
+.xi-hero-stage {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+.xi-hero-aside {
+  padding-left: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  padding-right: 20px;
+}
+.xi-button {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 17px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--xi-navy);
+  color: white;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.xi-button:hover {
+  background: var(--xr-blue);
+  transform: translateY(-2px);
+}
+.xi-button-light {
+  background: white;
+  color: var(--xi-navy);
+}
+.xi-button-light:hover {
+  background: #e5f0d8;
+}
+.xr-indust .xi-mission h2 {
+  font-size: 19px;
+  letter-spacing: -0.02em;
+}
+.xi-mission ul {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  font-size: 13px;
+  color: var(--xr-muted);
+  line-height: 2.1;
+}
+.xi-mission li::before {
+  content: '›';
+  color: var(--xr-blue);
+  margin-right: 9px;
+}
+.xi-hero-image {
+  position: relative;
+  margin: 0;
+  height: clamp(360px, 34vw, 650px);
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 35px));
+}
+.xi-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58%;
+}
+.xi-hero-image figcaption {
+  position: absolute;
+  bottom: 22px;
+  left: 34px;
+  color: white;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-shadow: 0 1px 5px #000;
+}
+.xi-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12%;
+  align-items: center;
+}
+.xi-about-visual {
+  position: relative;
+  background: #e3e9f0;
+  padding: 50px 15px 30px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 45px), calc(100% - 45px) 100%, 0 100%);
+}
+.xi-about-visual svg {
+  max-height: 350px;
+}
+.xi-about-visual > span {
+  display: block;
+  margin: 15px 25px;
+  color: var(--xr-muted);
+  font-size: 12px;
+}
+.xi-visual-corner {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 65px;
+  height: 65px;
+  background: var(--xr-green);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+}
+.xi-about-copy > p:not(.xi-eyebrow) {
+  max-width: 46ch;
+  margin-top: 25px;
+}
+.xi-about-copy .xi-button {
+  margin-top: 30px;
+}
+.xr-indust .xr-products {
+  background: transparent;
+}
+.xr-indust .xr-products > .xr-wrap {
+  padding-top: 20px;
+  padding-bottom: 90px;
+}
+.xr-indust .xr-product-tabs {
+  gap: 4px;
+}
+.xr-indust .xr-product-tabs button {
+  background: #e3e9f0;
+  padding-block: 22px;
+}
+.xr-indust .xr-product-tabs button[aria-pressed='true'] {
+  background: var(--xi-navy);
+}
+.xr-indust .xr-product-panel {
+  margin-top: 18px;
+}
+.xr-indust .xr-product-visual {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+  background: #e3e9f0;
+}
+.xi-section-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 35px;
+  margin-bottom: 55px;
+}
+.xi-section-top > p {
+  font-size: 15px;
+}
+.xi-applications {
+  padding-top: 20px;
+}
+.xi-application {
+  display: grid;
+  grid-template-columns: 60px 1.4fr 1fr 45px;
+  gap: 32px;
+  align-items: center;
+  padding: 34px 0;
+  border-top: 1px solid #c8d3e0;
+  color: var(--xr-ink);
+}
+.xi-application:last-child {
+  border-bottom: 1px solid #c8d3e0;
+}
+.xi-application-number {
+  font-size: 13px;
+  color: var(--xr-blue);
+  align-self: start;
+  padding-top: 7px;
+}
+.xr-indust .xi-application h3 {
+  font-size: clamp(1.5rem, 2.1vw, 2rem);
+  font-weight: 600;
+}
+.xi-application p {
+  margin-top: 12px;
+  max-width: 45ch;
+  font-size: 15px;
+}
+.xi-application .xi-application-details {
+  margin: 0;
+  max-width: 31ch;
+}
+.xi-application-arrow {
+  font-size: 32px;
+  color: var(--xr-blue);
+  transition: transform 0.2s;
+}
+.xi-application:hover .xi-application-arrow {
+  transform: translate(4px, -4px);
+}
+.xi-field-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--xi-navy);
+  color: white;
+  min-height: 460px;
+  clip-path: polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%);
+}
+.xi-field-copy {
+  padding: 70px 12%;
+}
+.xr-indust .xi-field-copy p {
+  color: #d5dfeb;
+  max-width: 40ch;
+  margin-bottom: 25px;
+}
+.xr-indust .xi-field-copy .xi-eyebrow {
+  color: #aad37e;
+}
+.xi-field-copy h2 {
+  margin-bottom: 25px;
+}
+.xi-field-photo {
+  background: url('/xinrong/field.webp') 70% center / cover;
+}
+.xi-contact {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 10%;
+}
+.xi-contact h2 {
+  margin-bottom: 28px;
+}
+.xi-contact > div > p:not(.xi-eyebrow) {
+  max-width: 36ch;
+}
+.xi-contact-note {
+  display: flex;
+  gap: 20px;
+  margin-top: 42px;
+  max-width: 36ch;
+  font-size: 14px;
+}
+.xi-contact-note > span {
+  color: var(--xr-blue);
+  font-size: 35px;
+}
+.xr-header {
+  border-bottom: 1px solid #e7ebf0;
+}
+.xr-footer {
+  background: #1d3960;
+  clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+}
+@media (min-width: 1600px) {
+  .xi-section {
+    padding-block: 145px;
+  }
+}
+@media (max-width: 1000px) {
+  .xi-hero-aside {
+    padding-left: 18%;
+  }
+  .xi-button {
+    padding: 15px;
+    gap: 15px;
+  }
+  .xi-hero-stage {
+    grid-template-columns: 30% 70%;
+  }
+  .xi-mission ul {
+    font-size: 12px;
+  }
+  .xi-hero-heading {
+    gap: 5%;
+  }
+  .xi-about {
+    gap: 6%;
+  }
+  .xi-application {
+    gap: 20px;
+    grid-template-columns: 40px 1.4fr 1fr 30px;
+  }
+  .xi-contact {
+    gap: 6%;
+  }
+}
+@media (max-width: 700px) {
+  .xi-section {
+    padding-block: 65px;
+  }
+  .xi-hero {
+    padding-top: 42px;
+  }
+  .xi-hero::before {
+    bottom: 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  .xi-hero-heading {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-bottom: 30px;
+  }
+  .xr-indust .xi-hero h1 {
+    font-size: clamp(2.45rem, 10.5vw, 4rem);
+  }
+  .xr-indust .xi-hero-heading p {
+    font-size: 15px;
+    max-width: 38ch;
+  }
+  .xi-hero-stage {
+    display: flex;
+    flex-direction: column;
+  }
+  .xi-hero-aside {
+    padding: 0 6% 28px;
+  }
+  .xi-mission {
+    display: none;
+  }
+  .xi-hero-image {
+    margin-left: 6%;
+    height: 310px;
+  }
+  .xi-hero-image figcaption {
+    font-size: 9px;
+    left: 26px;
+    max-width: 250px;
+  }
+  .xi-about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .xi-about-visual {
+    padding-block: 20px;
+  }
+  .xi-about-visual svg {
+    max-height: 250px;
+  }
+  .xi-about-copy .xi-eyebrow {
+    margin-bottom: 18px;
+  }
+  .xr-indust h2 {
+    font-size: clamp(1.9rem, 7.6vw, 2.6rem);
+  }
+  .xr-indust .xr-products > .xr-wrap {
+    padding-top: 0;
+    padding-bottom: 35px;
+  }
+  .xr-indust .xr-product-tabs button {
+    min-width: 165px;
+  }
+  .xi-section-top {
+    display: block;
+    margin-bottom: 30px;
+  }
+  .xi-section-top > p {
+    margin-top: 20px;
+  }
+  .xi-application {
+    grid-template-columns: 28px 1fr 26px;
+    gap: 13px;
+    padding-block: 27px;
+  }
+  .xi-application-details {
+    display: none;
+  }
+  .xi-application p {
+    font-size: 14px;
+  }
+  .xi-application-arrow {
+    font-size: 27px;
+  }
+  .xi-field-band {
+    grid-template-columns: 1fr;
+  }
+  .xi-field-copy {
+    padding: 50px 6%;
+  }
+  .xi-field-photo {
+    min-height: 300px;
+  }
+  .xi-contact {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .xi-contact-note {
+    margin-top: 25px;
+  }
+}
+
+.xi-projects {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 14%;
+  align-items: end;
+}
+.xr-indust .xi-projects h2 {
+  font-size: clamp(2rem, 3vw, 3.4rem);
+  margin-bottom: 48px;
+}
+.xi-project-list {
+  border-top: 1px solid var(--xr-blue);
+}
+.xi-project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--xr-blue);
+  color: var(--xr-ink);
+}
+.xi-project-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.xi-project-category {
+  display: block;
+  margin-top: 8px;
+  color: var(--xr-muted);
+  font-size: 11px;
+}
+.xi-project-arrow {
+  color: var(--xi-navy);
+  font-size: 25px;
+  transition: transform 0.2s;
+}
+.xi-project-row:hover .xi-project-arrow {
+  transform: translateX(5px);
+}
+.xi-project-row:hover .xi-project-title {
+  color: var(--xr-blue);
+}
+.xi-project-image {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 0.93;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+}
+.xi-project-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 700px) {
+  .xi-projects {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .xr-indust .xi-projects h2 {
+    margin-bottom: 30px;
+  }
+  .xi-project-row {
+    padding-block: 19px;
+  }
+  .xi-project-title {
+    font-size: 16px;
+  }
+  .xi-project-image {
+    aspect-ratio: 1.15;
+  }
+}
+
+.xi-consult {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  background: #1d3960;
+  color: white;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 45px 100%, 0 calc(100% - 45px));
+}
+.xi-consult-copy {
+  padding: 64px 11%;
+  align-self: center;
+}
+.xr-indust .xi-consult h2 {
+  font-size: clamp(1.8rem, 2.8vw, 3.2rem);
+  margin-bottom: 30px;
+}
+.xi-consult-image {
+  display: grid;
+  place-items: center;
+  background: white;
+  overflow: hidden;
+}
+.xi-consult-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.xi-news {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 34px;
+  align-items: start;
+}
+.xi-news-heading {
+  grid-column: 2;
+  grid-row: 1;
+}
+.xr-indust .xi-news-heading h2 {
+  font-size: clamp(1.7rem, 2.6vw, 3rem);
+  margin-bottom: 26px;
+}
+.xi-news-card:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.xi-news-card:nth-of-type(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.xi-news-card:nth-of-type(3) {
+  grid-column: 4;
+  grid-row: 1;
+}
+.xi-news-card {
+  background: white;
+  height: 100%;
+}
+.xi-news-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--xr-ink);
+}
+.xi-news-image {
+  aspect-ratio: 1.6;
+  overflow: hidden;
+  background: #e3e9f0;
+  clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 35px, 100% 100%, 0 100%);
+}
+.xi-news-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: white;
+  transition: transform 0.25s;
+}
+.xi-news-link:hover img {
+  transform: scale(1.04);
+}
+.xi-news-copy {
+  padding: 22px 18px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.xr-indust .xi-news-copy h3 {
+  font-size: 18px;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+.xi-news-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  color: var(--xr-muted);
+  font-size: 11px;
+}
+.xi-news-arrow {
+  display: grid;
+  place-items: center;
+  background: #1d3960;
+  color: white;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+@media (max-width: 1000px) {
+  .xi-news {
+    gap: 20px;
+  }
+  .xi-news-copy {
+    padding: 18px 12px 12px;
+  }
+  .xr-indust .xi-news-copy h3 {
+    font-size: 16px;
+  }
+  .xi-news-meta {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 700px) {
+  .xi-consult {
+    grid-template-columns: 1fr;
+  }
+  .xi-consult-copy {
+    padding: 40px 8%;
+  }
+  .xi-consult-image {
+    min-height: 210px;
+  }
+  .xi-consult-image img {
+    max-height: 250px;
+    object-fit: contain;
+  }
+  .xi-news {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .xi-news-heading,
+  .xi-news-card:nth-of-type(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .xi-news-heading {
+    margin-bottom: 8px;
+  }
+  .xi-news-copy {
+    padding: 22px;
+  }
+  .xr-indust .xi-news-copy h3 {
+    font-size: 20px;
+  }
+  .xi-news-meta {
+    flex-wrap: nowrap;
+  }
+}

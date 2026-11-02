@@ -1,0 +1,200 @@
+schemaVersion: 1
+mode:
+  value: installation
+  status: confirmed
+project:
+  directory: /Users/asa/Web Projects/XinRong/diguan 261031
+  directoryStatus: confirmed
+template:
+  value: website
+  status: confirmed
+  packageVersion: 4.0.0-beta.6
+  releaseChannel: beta
+  reviewedRevision: ec351643011603cf75dc91db5d03f80ff120f1e9
+  checkedAt: '2026-10-31'
+  source: https://github.com/payloadcms/payload/blob/main/packages/create-payload-app/src/lib/templates.ts
+  available: [blank, blank-tanstack, website, ecommerce, with-cloudflare-d1, plugin]
+modules:
+  status: confirmed
+  selection: retain-all
+  discovered: [folders, pages, posts, media, categories, users, header, footer, redirects, forms, form-submissions, search]
+features:
+  status: confirmed
+  pages:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+  posts:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+  media:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+  categories:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+  users:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+  folders:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultPermissionsVerification: source-verified
+  header:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultPermissionsVerification: source-verified
+  footer:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultPermissionsVerification: source-verified
+  redirects:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultPermissionsVerification: source-verified
+  forms:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultPermissionsVerification: source-verified
+  form-submissions:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultDeletePermissionVerification: source-verified
+    followUpRequirements:
+      status: confirmed
+      items: [server-side-form-validation, abuse-and-duplicate-controls, email-delivery-status]
+  search:
+    status: confirmed
+    selection: retain-all-template-behavior
+    custom: null
+    defaultWritePermissionsVerification: source-verified
+    publicationSyncVerification: source-verified-runtime-untested
+infrastructure:
+  status: pending
+  database:
+    type:
+      value: postgresql
+      status: confirmed
+    adapterChangeRequired: true
+    location:
+      value: remote
+      status: confirmed
+    dataState:
+      value: new-dedicated-empty-database
+      status: confirmed
+      actualTargetVerification: pending
+    ssl:
+      value: disabled
+      status: confirmed
+    connectionMode:
+      value: direct
+      status: confirmed
+  mediaStorage:
+    value: local-persistent-directory
+    path: public/media
+    deploymentRequirement: Mount a persistent directory at the runtime media path.
+    status: confirmed
+  mediaUpload:
+    status: confirmed
+    allowedMimeTypes: [image/jpeg, image/png, image/webp, image/gif]
+    maxFileSizeBytes: 10485760
+  localRuntime:
+    nodeVersion: 26.4.0
+    minimumNodeVersion: 24.22.1
+    packageManager: pnpm@10.28.2
+    host: 127.0.0.1
+    port: 3000
+    serverStarted: false
+forms:
+  status: pending
+  preset:
+    value: general-contact
+    status: confirmed
+  fields:
+    values: [name, email, phone, company, subject, message, country-region]
+    excluded: [privacy-consent-checkbox]
+    status: confirmed
+  requiredFields:
+    values: [name, email, phone, message]
+    status: confirmed
+  recordStorage:
+    value: form-submissions
+    status: confirmed
+  notification:
+    method: smtp
+    status: confirmed
+    configurationStatus: pending
+    configurationTiming:
+      value: defer-credentials-and-testing
+      status: confirmed
+    serviceAvailability:
+      value: existing-smtp-service
+      status: confirmed
+    senderAndRecipientAvailability:
+      value: determined-by-user
+      status: confirmed
+    host: null
+    port: null
+    tlsMode: null
+    senderName: null
+    senderEmail: null
+    recipientEmails: []
+  feedback:
+    status: confirmed
+    successMode: inline-message
+    successMessage: 已收到您的留言，我们会尽快联系您。
+    emailFailureMessage: 留言已保存，通知邮件待发送。
+  emailRetry:
+    status: confirmed
+    value: backend-retry
+    developmentRequired: true
+    preserveSavedSubmissionOnFailure: true
+    trackDeliverySeparately: true
+  submissionProtection:
+    status: confirmed
+    developmentRequired: true
+    items: [server-side-required-field-validation, email-format-validation, field-length-limits, basic-rate-limiting, short-term-duplicate-prevention]
+rehearsal:
+  status: complete-with-pending-items
+  installationAuthorized: true
+  pendingItems:
+    - Remote database connection configuration and existing data verification
+    - SMTP host, port, TLS mode, local credentials, sender and notification recipients
+    - Test recipient confirmation before any external email test
+  developmentRequired:
+    - PostgreSQL adapter configuration
+    - Contact form preset
+    - Submission validation, rate limits and duplicate prevention
+    - Separate email delivery state and backend retry
+installation:
+  status: code-and-dependencies-complete-services-pending
+  databaseConnectionTiming:
+    value: defer-until-user-fills-local-env
+    status: confirmed
+  implemented: [postgresql-adapter, contact-form-preset-script, upload-limits, submission-validation, rate-limit, duplicate-prevention, durable-email-state, admin-email-retry]
+  generated: [payload-types, admin-import-map, initial-migration]
+  migrationApplied: false
+  contactPresetApplied: false
+  destructiveSeedExecuted: false
+verification:
+  dependenciesInstalled: true
+  databaseConnected: false
+  emailSent: false
+  runtimeCompatibility: passed-node-26.4.0
+  typecheck: passed
+  lint: passed-with-13-upstream-and-generated-warnings
+  unitTests: passed-20-tests
+  build: compilation-and-types-passed-page-data-blocked-by-missing-DATABASE_URL
+  adminAndFrontend: untested
+  databaseTargetAndData: untested
+  emailDelivery: untested

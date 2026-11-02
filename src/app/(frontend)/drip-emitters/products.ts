@@ -1,0 +1,97 @@
+export const emitters = [
+  {
+    slug: 'pressure-compensating-emitter',
+    name: 'Pressure Compensating Emitter',
+    sourceId: '12048931',
+    tag: 'Uneven terrain · Long runs',
+    description: 'Consistent water delivery across changing pressures. An elastic silicone diaphragm adjusts the flow channel for hillsides, terraces and long irrigation runs.',
+    features: [
+      'A labyrinth flow path and silicone diaphragm regulate discharge as water pressure changes.',
+      'An extended filtered inlet helps resist clogging.',
+      'An anti-siphon mechanism helps prevent sediment from entering when the system shuts down, supporting subsurface irrigation.',
+      'Low manufacturing variation supports uniform water delivery over long runs.',
+    ],
+    specifications: [['Design', 'Pressure compensating, labyrinth flow path'], ['Terrain', 'Hillsides, terraces and long runs'], ['Installation', 'Surface or subsurface irrigation']],
+    application: 'For irrigation layouts with elevation changes or long pipe runs where pressure variation affects water delivery.',
+    images: 3,
+  },
+  {
+    slug: 'cylindrical-emitter',
+    name: 'Cylindrical Emitter',
+    sourceId: '12048927',
+    tag: 'Landscaping · Orchards',
+    description: 'A wide, turbulent flow path helps carry impurities through the emitter. Built for lasting use in landscaping, nurseries and orchards on flat or gently sloping ground.',
+    features: [
+      'A wide, long turbulent flow channel helps discharge impurities and reduce clogging.',
+      'Self-flushing action supports operation where frequent flushing is required.',
+      'A durable cylindrical structure suits long-term irrigation applications.',
+    ],
+    specifications: [['Design', 'Cylindrical, turbulent flow path'], ['Terrain', 'Flat ground and gentle slopes'], ['Applications', 'Landscaping, nurseries and orchards']],
+    application: 'Suitable for long-term irrigation of gardens, green spaces, nurseries and orchards, including water sources that require more frequent flushing.',
+    images: 2,
+  },
+  {
+    slug: 'n-tooth-flat-emitter',
+    name: 'N-Tooth Flat Emitter',
+    sourceId: '12048920',
+    tag: 'Clean water · Field crops',
+    description: 'A mature, lightweight flat emitter for well-filtered water supplies. Designed for broad use in seasonal field-crop irrigation.',
+    features: [
+      'An established N-tooth flow-path design for systems with good water quality and effective filtration.',
+      'Lightweight construction supports economical, large-scale seasonal irrigation.',
+      'Lower-flow versions are suited to longer irrigation runs.',
+    ],
+    specifications: [['Recommended tape wall', '0.15–0.20 mm'], ['Working pressure', '0.8–1.2 bar'], ['Service', 'Single-season use'], ['Crops', 'Cotton, potatoes, corn and vegetables']],
+    application: 'For high-standard farmland with good water quality and a complete filtration system. Match the flow rate and run length to the irrigation design.',
+    images: 1,
+  },
+  {
+    slug: 'mini-flat-emitter',
+    name: 'MINI Flat Emitter',
+    sourceId: '12048912',
+    tag: 'Lightweight · Seasonal irrigation',
+    description: 'A compact, versatile emitter for seasonal crops on relatively flat ground. Its lightweight design helps reduce material and operating costs.',
+    features: [
+      'A widely used emitter series for domestic and international irrigation applications.',
+      'Lightweight construction helps reduce material costs.',
+      'A smooth flow path supports stable discharge on relatively flat ground.',
+    ],
+    specifications: [['Recommended tape wall', '0.15–0.20 mm'], ['Working pressure', '0.8–1.2 bar'], ['Service', 'Single-season use'], ['Crops', 'Cotton, potatoes, corn and vegetables']],
+    application: 'For seasonal field-crop irrigation where broad compatibility, efficient installation and material economy matter.',
+    images: 1,
+  },
+  {
+    slug: 'storm-nt-flat-emitter',
+    name: 'Storm “NT” Flat Emitter',
+    sourceId: '12048908',
+    tag: 'Clog resistance · Field crops',
+    description: 'An enhanced anti-clogging flow path for more demanding water conditions. Suited to seasonal field crops on relatively flat ground.',
+    features: [
+      'An upgraded flow path improves the passage of impurities and resistance to clogging.',
+      'A versatile design for more demanding growing environments.',
+      'Lower-flow versions support longer irrigation runs.',
+    ],
+    specifications: [['Recommended tape wall', '0.18–0.25 mm'], ['Working pressure', '0.8–1.2 bar'], ['Service', 'Single-season use'], ['Crops', 'Cotton, potatoes, corn and vegetables']],
+    application: 'For cotton, potatoes, corn and vegetables where water quality is less consistent and clog resistance is a priority.',
+    images: 1,
+  },
+  {
+    slug: 'custom-high-flow-emitter',
+    name: 'Custom High-Flow Emitter',
+    sourceId: '12048901',
+    tag: 'Custom flow · Multi-year use',
+    description: 'A specially shaped flat emitter for higher flow and multi-year drip tubing. Flow rate, structure and installation can be developed around your application.',
+    features: [
+      'A specially shaped flat structure delivers higher flow for long-term drip tubing.',
+      'Customizable flow rates with strong resistance to clogging.',
+      'A thicker construction supports long-term service and higher operating pressure.',
+    ],
+    specifications: [['Recommended tubing wall', '0.30–1.00 mm'], ['Working pressure', '2.0–4.0 bar'], ['Flow rate', 'Customized to requirements'], ['Service', 'Multi-year use']],
+    application: 'For vegetables, fruit trees and other crops requiring higher flow and long-term irrigation. Share the target flow rate, part dimensions and installation requirements when requesting a quotation.',
+    images: 1,
+  },
+]
+
+export function emitterImage(sourceId: string, index = 1) {
+  return `/xinrong/emitters/${sourceId}-${index}.jpg`
+}

@@ -1,10 +1,14 @@
 services:
   payload:
-    image: node:26.4.0-alpine
+    build:
+      context: .
+      dockerfile_inline: |
+        FROM node:26.4.0-alpine
+        WORKDIR /home/node/app
+        COPY . .
     ports:
       - '127.0.0.1:3000:3000'
     volumes:
-      - .:/home/node/app
       - node_modules:/home/node/app/node_modules
       - ./public/media:/home/node/app/public/media
     working_dir: /home/node/app

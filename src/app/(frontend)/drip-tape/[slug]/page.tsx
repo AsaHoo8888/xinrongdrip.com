@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { InquiryForm } from '@/components/Xinrong/InquiryForm'
 import { dripTapes, dripTapeImage } from '../products'
-import '../../production-lines/external-pre-punched-hose-production-line/production-line.css'
-import '../../drip-emitters/emitters.css'
+import '../../production-lines/production-line.css'
+import '../../drippers/emitters.css'
 
 type Props = { params: Promise<{ slug: string }> }
 

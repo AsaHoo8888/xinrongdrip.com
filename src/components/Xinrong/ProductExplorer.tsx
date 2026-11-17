@@ -1,22 +1,11 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const products = [
   {
-    name: 'Drip Irrigation Equipment',
-    title: 'Drip tape production lines',
-    description:
-      'Equipment for making drip irrigation tape. Begin with the tape you want to produce, then define the production and installation requirements.',
-    selection: [
-      ['Tape design', 'Tape diameter, wall thickness and emitter spacing'],
-      ['Production requirements', 'Target output and raw material'],
-      ['Installation conditions', 'Available floor space, power supply and cooling'],
-    ],
-    type: 'line',
-  },
-  {
-    name: 'Drip Emitters',
+    name: 'Drippers',
     title: 'Emitters for drip irrigation',
     description:
       'Water-delivery components for drip irrigation systems. Compare the emitter design with your tape or tubing and the conditions in which it will operate.',
@@ -28,22 +17,10 @@ const products = [
     type: 'emitters',
   },
   {
-    name: 'Drip Tape',
-    title: 'Drip tape for crop irrigation',
+    name: 'Dripper Moulds',
+    title: 'Dripper Moulds',
     description:
-      'Drip irrigation tape for delivering water along crop rows. Start with your crop layout, irrigation design and water supply when requesting product specifications.',
-    selection: [
-      ['Tape dimensions', 'Diameter, wall thickness and roll length'],
-      ['Irrigation design', 'Emitter spacing and required flow rate'],
-      ['Field conditions', 'Row length, operating pressure and water supply'],
-    ],
-    type: 'tape',
-  },
-  {
-    name: 'Injection Molds',
-    title: 'Molds for irrigation components',
-    description:
-      'Injection molds for shaping irrigation components. Your part drawing and material requirements provide the starting point for defining the tooling.',
+      'Flat and cylindrical dripper moulds with standard 256, 448, 576 and 640-cavity configurations, plus custom tooling for your production requirements.',
     selection: [
       ['Part definition', '2D or 3D drawing, dimensions and intended resin'],
       ['Tooling requirements', 'Cavity count and molding machine interface'],
@@ -52,10 +29,22 @@ const products = [
     type: 'mold',
   },
   {
-    name: 'Auxiliary Equipment',
-    title: 'Support for your production line',
+    name: 'Driplines',
+    title: 'Inline dripper irrigation pipe',
     description:
-      'Auxiliary equipment for the production process. Identify the required function and its connection to your existing or planned equipment before specifying a unit.',
+      'Compare flat, pressure compensating, cylindrical and T-Tape dripper designs for your crop, terrain and installation conditions.',
+    selection: [
+      ['Pipe dimensions', 'Nominal diameter and wall thickness'],
+      ['Water delivery', 'Dripper spacing, flow rate and operating pressure'],
+      ['Installation', 'Terrain, run length and surface or subsurface laying'],
+    ],
+    type: 'pipe',
+  },
+  {
+    name: 'Accessory Equipment',
+    title: 'Accessory equipment for your production line',
+    description:
+      'Equipment for waste pipe recycling, welding and rewinding, packing, water flow testing, mixing and drying.',
     selection: [
       ['Process requirements', 'Required function and production-line information'],
       ['Equipment interfaces', 'Connection points, dimensions and layout'],
@@ -173,6 +162,16 @@ export function ProductDrawing({ type }: { type: string }) {
 
 export function ProductExplorer() {
   const [active, setActive] = useState(0)
+  useEffect(() => {
+    const selectAuxiliary = () => {
+      if (window.location.hash === '#auxiliary-equipment') {
+        setActive(products.findIndex((product) => product.type === 'auxiliary'))
+      }
+    }
+    selectAuxiliary()
+    window.addEventListener('hashchange', selectAuxiliary)
+    return () => window.removeEventListener('hashchange', selectAuxiliary)
+  }, [])
   const product = products[active]
   return (
     <section className="xr-products" id="products">
@@ -182,16 +181,16 @@ export function ProductExplorer() {
           <p>
             Compare the application and selection details
             <br />
-            across our five product categories.
+            across our {products.length} product categories.
           </p>
         </div>
         <div
-          className="xr-product-tabs grid grid-cols-[1.4fr_1fr_1fr_1fr_1.2fr] gap-[5px] max-[700px]:flex max-[700px]:overflow-x-auto max-[700px]:pb-[5px]"
+          className="xr-product-tabs grid grid-cols-4 gap-[5px] max-[700px]:flex max-[700px]:overflow-x-auto max-[700px]:pb-[5px]"
           role="group"
           aria-label="Product categories"
         >
           {products.map((p, i) => (
-            <button key={p.name} aria-pressed={active === i} onClick={() => setActive(i)}>
+            <button className="scroll-mt-28" id={p.type === 'auxiliary' ? 'auxiliary-equipment' : undefined} key={p.name} aria-pressed={active === i} onClick={() => setActive(i)}>
               {p.name}
               <span aria-hidden="true">↗</span>
             </button>
@@ -202,26 +201,50 @@ export function ProductExplorer() {
           aria-live="polite"
         >
           <div className="xr-product-visual flex flex-col items-center justify-center overflow-hidden max-[700px]:min-h-[250px]">
-            <ProductDrawing type={product.type} />
-            <span>Category illustration · Not a specific model</span>
+            {product.type === 'auxiliary' ? (
+              <Image unoptimized src="/xinrong/accessory-equipment/on-site-waste-pipe-pelletizing-machine.png" alt="On-site Waste Pipe Pelletizing Machine" width={1200} height={900} className="w-full max-h-[370px] object-contain" sizes="(max-width: 700px) 88vw, 50vw" />
+            ) : product.type === 'mold' ? (
+              <Image unoptimized src="/xinrong/dripper-moulds/flat-dripper-mould.png" alt="Flat Dripper Mould" width={1200} height={1000} className="w-full max-h-[370px] object-contain" sizes="(max-width: 700px) 88vw, 50vw" />
+            ) : product.type === 'emitters' ? (
+              <Image unoptimized src="/xinrong/emitters/emitter-category-wide.png" alt="Cylindrical, flat and pressure compensating drip emitters" width={1200} height={800} className="w-full max-h-[370px] object-contain" sizes="(max-width: 700px) 88vw, 50vw" />
+            ) : product.type === 'pipe' ? (
+              <Image unoptimized src="/xinrong/drip-irrigation-pipe/pipe-category-transparent.png" alt="Cylindrical, T-Tape, pressure compensating and flat dripper irrigation pipe" width={1200} height={800} className="w-full max-h-[370px] object-contain" sizes="(max-width: 700px) 88vw, 50vw" />
+            ) : (
+              <><ProductDrawing type={product.type} /><span>Category illustration · Not a specific model</span></>
+            )}
           </div>
           <div className="xr-product-copy py-[42px] px-[38px] max-[1000px]:py-[30px] max-[1000px]:px-6 max-[700px]:pt-[30px] max-[700px]:px-6 max-[700px]:pb-[35px]">
             <h3>{product.title}</h3>
             <p>{product.description}</p>
+            {product.type === 'auxiliary' && (
+              <Link className="xr-text-link text-xr-blue inline-flex gap-4 items-center mt-5" href="/accessory-equipment">
+                Explore all 5 accessory equipment products <span aria-hidden="true">↗</span>
+              </Link>
+            )}
+            {product.type === 'mold' && (
+              <Link className="xr-text-link text-xr-blue inline-flex gap-4 items-center mt-5" href="/dripper-moulds">
+                Explore dripper moulds <span aria-hidden="true">↗</span>
+              </Link>
+            )}
             {product.type === 'line' && (
               <Link
                 className="xr-text-link text-xr-blue inline-flex gap-4 items-center mt-5"
-                href="/production-lines/external-pre-punched-hose-production-line"
+                href="/production-lines"
               >
-                External pre-punched hose production line <span aria-hidden="true">↗</span>
+                Explore all production lines <span aria-hidden="true">↗</span>
               </Link>
             )}
             {product.type === 'emitters' && (
               <Link
                 className="xr-text-link text-xr-blue inline-flex gap-4 items-center mt-5"
-                href="/drip-emitters"
+                href="/drippers"
               >
-                Explore all 6 drip emitters <span aria-hidden="true">↗</span>
+                Explore all drippers <span aria-hidden="true">↗</span>
+              </Link>
+            )}
+            {product.type === 'pipe' && (
+              <Link className="xr-text-link text-xr-blue inline-flex gap-4 items-center mt-5" href="/driplines">
+                Explore all 4 driplines <span aria-hidden="true">↗</span>
               </Link>
             )}
             {product.type === 'tape' && (

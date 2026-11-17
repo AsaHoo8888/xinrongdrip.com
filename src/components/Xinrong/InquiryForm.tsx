@@ -74,9 +74,10 @@ export function InquiryForm({ productName }: { productName?: string }) {
         <select name="subject" defaultValue="Drip Irrigation Equipment">
           {[
             'Drip Irrigation Equipment',
-            'Drip Emitters',
+            'Drippers',
             'Drip Tape',
-            'Injection Molds',
+            'Driplines',
+            'Dripper Moulds',
             'Auxiliary Equipment',
             'Other inquiry',
           ].map((p) => (

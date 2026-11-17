@@ -716,11 +716,13 @@ body {
 .xi-about-visual {
   position: relative;
   background: #e3e9f0;
-  padding: 50px 15px 30px;
+  padding: 0 0 15px;
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 45px), calc(100% - 45px) 100%, 0 100%);
 }
-.xi-about-visual svg {
-  max-height: 350px;
+.xi-about-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .xi-about-visual > span {
   display: block;
@@ -750,7 +752,7 @@ body {
   background: transparent;
 }
 .xr-indust .xr-products > .xr-wrap {
-  padding-top: 20px;
+  padding-top: 90px;
   padding-bottom: 90px;
 }
 .xr-indust .xr-product-tabs {
@@ -765,6 +767,10 @@ body {
 }
 .xr-indust .xr-product-panel {
   margin-top: 18px;
+  background: transparent;
+}
+.xr-indust .xr-product-copy {
+  background: white;
 }
 .xr-indust .xr-product-visual {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30px 100%, 0 calc(100% - 30px));
@@ -779,6 +785,32 @@ body {
 }
 .xi-section-top > p {
   font-size: 15px;
+}
+.xi-workshop-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 30px;
+  align-items: end;
+}
+.xi-workshop-grid figure {
+  margin: 0;
+  min-width: 0;
+}
+.xi-workshop-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.xi-workshop-grid figcaption {
+  margin-top: 16px;
+  color: var(--xr-muted);
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .xi-workshop-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 }
 .xi-applications {
   padding-top: 20px;
@@ -954,12 +986,6 @@ body {
   .xi-about {
     grid-template-columns: 1fr;
     gap: 35px;
-  }
-  .xi-about-visual {
-    padding-block: 20px;
-  }
-  .xi-about-visual svg {
-    max-height: 250px;
   }
   .xi-about-copy .xi-eyebrow {
     margin-bottom: 18px;

@@ -23,12 +23,12 @@ export function Navigation() {
         aria-label="Main navigation"
       >
         {[
-          ['Products', '/#products'],
-          ['Production Lines', '/production-lines/external-pre-punched-hose-production-line'],
-          ['Drip Emitters', '/drip-emitters'],
-          ['Drip Tape', '/drip-tape'],
-          ['Applications', '/#applications'],
-          ['About XINRONG', '/about'],
+          ['Production Lines', '/production-lines'],
+          ['Drippers', '/drippers'],
+          ['Dripper Moulds', '/dripper-moulds'],
+          ['Driplines', '/driplines'],
+          ['Accessory Equipment', '/accessory-equipment'],
+          ['About', '/about'],
         ].map(([label, href]) => (
           <Link key={href} href={href} onClick={() => setOpen(false)}>
             {label}

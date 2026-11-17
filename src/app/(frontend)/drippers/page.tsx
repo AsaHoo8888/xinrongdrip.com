@@ -5,9 +5,9 @@ import { emitters, emitterImage } from './products'
 import './emitters.css'
 
 export const metadata: Metadata = {
-  title: 'Water-Saving Drip Emitters | XINRONG',
-  description: 'Explore six drip emitter designs, from pressure compensating and cylindrical emitters to flat and custom high-flow options.',
-  alternates: { canonical: '/drip-emitters' },
+  title: 'Water-Saving Drippers | XINRONG',
+  description: 'Explore flat, pressure compensating and cylindrical drippers for your drip irrigation system.',
+  alternates: { canonical: '/drippers' },
 }
 
 export default function DripEmittersPage() {
@@ -16,12 +16,12 @@ export default function DripEmittersPage() {
       <section className="xi-wrap xe-heading">
         <Link className="xe-back" href="/#products">← All product categories</Link>
         <p className="xi-eyebrow">WATER-SAVING COMPONENTS</p>
-        <h1>Water-saving<br />drip emitters.</h1>
-        <p>Six emitter designs for different water conditions, terrain and crop cycles.<br />Find the right fit for your drip tape or tubing.</p>
+        <h1>Water-saving<br />drippers.</h1>
+        <p>Drip emitter designs for different water conditions, terrain and crop cycles.<br />Find the right fit for your drip tape or tubing.</p>
       </section>
       <section className="xi-wrap xe-grid" aria-label="Drip emitter products">
         {emitters.map((product, index) => (
-          <Link className="xe-card" href={`/drip-emitters/${product.slug}`} key={product.slug}>
+          <Link className="xe-card" href={`/drippers/${product.slug}`} key={product.slug}>
             <div className="xe-card-image">
               <Image unoptimized src={emitterImage(product.sourceId)} alt={product.name} width={640} height={480} sizes="(max-width: 700px) 88vw, (max-width: 1000px) 44vw, 29vw" preload={index === 0} />
             </div>

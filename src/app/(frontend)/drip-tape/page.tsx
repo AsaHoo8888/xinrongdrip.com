@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { dripTapes, dripTapeImage } from './products'
-import '../drip-emitters/emitters.css'
+import '../drippers/emitters.css'
 import './drip-tape.css'
 
 export const metadata: Metadata = {

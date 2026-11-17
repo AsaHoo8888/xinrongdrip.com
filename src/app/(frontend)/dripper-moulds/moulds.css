@@ -1,0 +1,12 @@
+.xm-page .xe-card-image { padding: 24px; }
+.xm-section { padding-top: 65px; }
+.xm-section h2 { max-width: 900px; margin: 18px 0 25px; }
+.xm-section > p:not(.xi-eyebrow) { max-width: 1050px; font-size: 17px; line-height: 1.85; margin-top: 18px; }
+.xm-specifications { margin-top: 30px; }
+.xm-specifications > div { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid #dce3ed; }
+.xm-specifications dt { font-weight: 600; }
+.xm-specifications dd { color: var(--xr-muted); }
+@media (max-width: 700px) {
+  .xm-section { padding-top: 40px; }
+  .xm-specifications > div { grid-template-columns: 1fr; gap: 6px; }
+}

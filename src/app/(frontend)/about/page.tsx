@@ -3,12 +3,35 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 import { AboutPurpose } from '@/components/Xinrong/AboutPurpose'
 import { ProductDrawing } from '@/components/Xinrong/ProductExplorer'
+import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 import './about.css'
+
+const factoryImage = {
+  url: '/xinrong/xinrong-factory-exterior.webp',
+  width: 2400,
+  height: 1114,
+  alt: 'XINRONG factory exterior showing the production buildings and main entrance',
+}
 
 export const metadata: Metadata = {
   title: 'About XINRONG | Precision Production & Drip Irrigation',
   description:
     'Discover XINRONG’s range of drip irrigation equipment, components and precision molds, from the production line to the growing field.',
+  alternates: { canonical: '/about' },
+  openGraph: mergeOpenGraph({
+    title: 'About XINRONG | Precision Production & Drip Irrigation',
+    description:
+      'Discover XINRONG’s range of drip irrigation equipment, components and precision molds, from the production line to the growing field.',
+    url: '/about',
+    images: [factoryImage],
+  }),
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About XINRONG | Precision Production & Drip Irrigation',
+    description:
+      'Discover XINRONG’s range of drip irrigation equipment, components and precision molds, from the production line to the growing field.',
+    images: [{ url: factoryImage.url, alt: factoryImage.alt }],
+  },
 }
 
 export default function About() {
@@ -29,18 +52,18 @@ export default function About() {
           </div>
           <figure className="xa-image">
             <Image
-              src="/xinrong/field.webp"
-              alt="Drip irrigation tape watering crop rows in a sunlit field"
-              width={1920}
-              height={1280}
+              src={factoryImage.url}
+              alt={factoryImage.alt}
+              width={factoryImage.width}
+              height={factoryImage.height}
               preload
-              unoptimized
-              sizes="(max-width: 700px) 88vw, 42vw"
+              quality={75}
+              sizes="(max-width: 700px) 780px, 1600px"
             />
             <figcaption>
-              From the production line.
+              XINRONG factory.
               <br />
-              To the growing field.
+              Production starts here.
             </figcaption>
           </figure>
           <AboutPurpose />
@@ -90,6 +113,89 @@ export default function About() {
             <li>Components selected for your irrigation application</li>
             <li>Tooling specified from your part drawings and material</li>
           </ul>
+        </div>
+      </section>
+      <section className="xi-wrap xi-section xa-certificates" aria-labelledby="certificates-title">
+        <p className="xi-eyebrow">CERTIFICATES & PATENTS</p>
+        <h2 id="certificates-title">Credentials, documented.</h2>
+        <div className="xa-certificate-grid">
+          {[
+            {
+              title: 'ISO 9001:2015 Certificate',
+              description: 'Quality management system · Expired 23 May 2025',
+              number: '22ACM16296Q',
+              name: 'iso-9001-quality-management',
+              format: 'pdf',
+              width: 1060,
+              height: 1500,
+              alt: 'ACM ISO 9001:2015 quality management certificate for XINRONG, dated 24 May 2022 with expiry on 23 May 2025',
+            },
+            {
+              title: 'CE Attestation of Conformity',
+              description: 'Plastic pipe extrusion machine · UDEM',
+              number: 'M.2026.206.C137691',
+              name: 'ce-attestation',
+              format: 'pdf',
+              width: 1062,
+              height: 1500,
+              alt: 'UDEM attestation of conformity for XINRONG plastic pipe extrusion machines',
+            },
+            {
+              title: 'High-Tech Enterprise Certificate',
+              description: 'Issued 19 December 2025 · Three-year term',
+              number: 'GR202532007287',
+              name: 'high-tech-enterprise',
+              format: 'pdf',
+              width: 1100,
+              height: 777,
+              alt: 'High-tech enterprise certificate for Jiangsu Xinrongplas Machinery Co., Ltd.',
+            },
+            {
+              title: 'Vacuum Tank Caster Device',
+              description: 'Invention patent · Granted 10 May 2024',
+              number: 'ZL 2019 1 0285867.9',
+              name: 'vacuum-tank-caster-patent',
+              format: 'pdf',
+              width: 1061,
+              height: 1500,
+              alt: 'Chinese invention patent certificate for a vacuum tank caster moving device',
+            },
+            {
+              title: 'Pipe Winding Equipment',
+              description: 'Invention patent · Granted 3 November 2017',
+              number: 'ZL 2016 1 0246909.4',
+              name: 'pipe-winding-equipment-patent',
+              format: 'jpg',
+              width: 1055,
+              height: 1500,
+              alt: 'Chinese invention patent certificate for equipment used to wind glass-fiber pipes',
+            },
+          ].map((certificate) => (
+            <a
+              className="xa-certificate"
+              href={`/xinrong/certificates/${certificate.name}.${certificate.format}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${certificate.title} (opens in a new tab)`}
+              key={certificate.name}
+            >
+              <div className="xa-certificate-image">
+                <Image
+                  src={`/xinrong/certificates/${certificate.name}.webp`}
+                  alt={certificate.alt}
+                  width={certificate.width}
+                  height={certificate.height}
+                  unoptimized
+                />
+              </div>
+              <h3>{certificate.title}</h3>
+              <p>{certificate.description}</p>
+              <p className="xa-certificate-number">{certificate.number}</p>
+              <span className="xa-certificate-link">
+                View certificate <span aria-hidden="true">↗</span>
+              </span>
+            </a>
+          ))}
         </div>
       </section>
       <section className="xi-wrap xi-section xa-process" aria-labelledby="process-title">

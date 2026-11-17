@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ProductDrawing, ProductExplorer } from '@/components/Xinrong/ProductExplorer'
+import { ProductionShowcase } from '@/components/Xinrong/ProductionShowcase'
+import { ProductExplorer } from '@/components/Xinrong/ProductExplorer'
 
 export const metadata: Metadata = {
   title: 'XINRONG | Drip Irrigation Equipment & Precision Molds',
@@ -55,8 +56,14 @@ export default function Home() {
 
       <section className="xi-about xi-wrap xi-section" id="about">
         <div className="xi-about-visual">
-          <ProductDrawing type="line" />
-          <span>Drip tape production · Equipment concept</span>
+          <Image
+            src="/xinrong/xinrong-factory-exterior.webp"
+            alt="XINRONG factory exterior showing the production buildings and main entrance"
+            width={2400}
+            height={1114}
+            quality={75}
+            sizes="(max-width: 700px) 88vw, 40vw"
+          />
           <div className="xi-visual-corner" aria-hidden="true">
             ↗
           </div>
@@ -64,25 +71,25 @@ export default function Home() {
         <div className="xi-about-copy">
           <p className="xi-eyebrow">MEET XINRONG</p>
           <h2>
-            From the production line.
+            Meet the company
             <br />
-            To the growing field.
+            behind the equipment.
           </h2>
           <p>
-            Bring your irrigation project together with a focused range of equipment, precision
-            components and manufacturing tools.
+            XINRONG brings together drip irrigation equipment, emitters, drip tape and precision
+            molds, connecting manufacturing with the needs of field irrigation.
           </p>
           <p>
-            Our range connects the equipment used to produce drip tape with the emitters, tape and
-            tooling behind irrigation systems.
+            From our factory to your project, we start with your application — whether you are
+            planning a production line, selecting irrigation components or developing a custom mold.
           </p>
-          <a className="xi-button" href="#contact">
-            Discuss your requirements <span aria-hidden="true">↗</span>
-          </a>
+          <Link className="xi-button" href="/about">
+            More about XINRONG <span aria-hidden="true">↗</span>
+          </Link>
         </div>
       </section>
 
-      <ProductExplorer />
+      <ProductionShowcase />
 
       <section className="xi-applications xi-wrap xi-section" id="applications">
         <div className="xi-section-top">
@@ -117,7 +124,7 @@ export default function Home() {
               'Shape the component.',
               'Injection molds defined around your irrigation component requirements.',
               'Part drawings, resin, cavity count and critical dimensions.',
-              '#contact',
+              '/dripper-moulds',
             ],
           ].map(([number, title, copy, details, href]) => (
             <a className="xi-application" href={href} key={number}>
@@ -158,54 +165,43 @@ export default function Home() {
         />
       </section>
 
-      <section
-        className="xi-projects xi-wrap xi-section"
-        id="showcase"
-        aria-labelledby="showcase-heading"
-      >
-        <div className="xi-projects-copy">
-          <h2 id="showcase-heading">
-            Product
+      <ProductExplorer />
+
+      <section className="xi-workshop xi-wrap xi-section" aria-labelledby="workshop-heading">
+        <div className="xi-section-top">
+          <h2 id="workshop-heading">
+            Precision machining.
             <br />
-            showcase
+            A closer look.
           </h2>
-          <div className="xi-project-list">
-            {[
-              [
-                'Pre-punched hose production line',
-                'Production equipment',
-                '/production-lines/external-pre-punched-hose-production-line',
-              ],
-              ['Precision drip emitters', 'Irrigation components', '/drip-emitters'],
-              ['Drip tape for crop irrigation', 'Field irrigation', '/drip-tape'],
-              ['Custom injection molds', 'Component tooling', '/contact'],
-            ].map(([title, category, href]) => (
-              <Link className="xi-project-row" href={href} key={title}>
-                <span>
-                  <span className="xi-project-title">{title}</span>
-                  <span className="xi-project-category">{category}</span>
-                </span>
-                <span className="xi-project-arrow" aria-hidden="true">
-                  →
-                </span>
-              </Link>
-            ))}
-          </div>
+          <p>
+            Inside our mold workshop, from electrode machining
+            <br />
+            to dimensional inspection.
+          </p>
         </div>
-        <Link
-          className="xi-project-image"
-          href="/production-lines/external-pre-punched-hose-production-line"
-          aria-label="Explore the pre-punched hose production line"
-        >
-          <Image
-            src="/xinrong/external-pre-punched-hose/production-line.png"
-            alt="XINRONG pre-punched hose production line with winding units and control panels"
-            width={788}
-            height={448}
-            unoptimized
-            sizes="(max-width: 700px) 88vw, 34vw"
-          />
-        </Link>
+        <div className="xi-workshop-grid">
+          <figure>
+            <Image
+              src="/xinrong/workshop/precision-machining.webp"
+              alt="Sodick electrical discharge machines in the XINRONG mold workshop"
+              width={1280}
+              height={960}
+              sizes="(max-width: 700px) 88vw, 52vw"
+            />
+            <figcaption>Precision mold machining</figcaption>
+          </figure>
+          <figure>
+            <Image
+              src="/xinrong/workshop/electrode-measurement.webp"
+              alt="A measurement probe inspecting copper electrodes for drip emitter molds"
+              width={1600}
+              height={900}
+              sizes="(max-width: 700px) 88vw, 34vw"
+            />
+            <figcaption>Electrode measurement and inspection</figcaption>
+          </figure>
+        </div>
       </section>
 
       <section className="xi-consult xi-wrap" id="contact" aria-labelledby="consult-heading">
@@ -221,10 +217,10 @@ export default function Home() {
         </div>
         <div className="xi-consult-image">
           <Image
-            src="/xinrong/external-pre-punched-hose/production-line.png"
-            alt="XINRONG hose production equipment"
-            width={788}
-            height={448}
+            src="/xinrong/inline-flat-dripper-production-line/image1.jpeg"
+            alt="XINRONG inline flat dripper production equipment"
+            width={1265}
+            height={222}
             unoptimized
           />
         </div>
@@ -243,16 +239,16 @@ export default function Home() {
         </div>
         {[
           {
-            title: 'Planning a pre-punched hose production line',
-            image: '/xinrong/external-pre-punched-hose/production-line.png',
-            alt: 'Pre-punched hose production equipment',
-            href: '/production-lines/external-pre-punched-hose-production-line',
+            title: 'Planning an inline flat dripper production line',
+            image: '/xinrong/inline-flat-dripper-production-line/image1.jpeg',
+            alt: 'Inline flat dripper production equipment',
+            href: '/production-lines/high-speed-inline-flat-dripper-production-line',
           },
           {
             title: 'Explore emitters for your irrigation system',
             image: '/xinrong/emitters/12048927-1.jpg',
             alt: 'XINRONG drip irrigation emitters',
-            href: '/drip-emitters',
+            href: '/drippers',
           },
           {
             title: 'Find drip tape for your crop irrigation needs',

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { InquiryForm } from '@/components/Xinrong/InquiryForm'
 import { emitters, emitterImage } from '../products'
-import '../../production-lines/external-pre-punched-hose-production-line/production-line.css'
+import '../../production-lines/production-line.css'
 import '../emitters.css'
 
 type Props = { params: Promise<{ slug: string }> }
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${product.name} | XINRONG`,
     description: product.description,
-    alternates: { canonical: `/drip-emitters/${product.slug}` },
+    alternates: { canonical: `/drippers/${product.slug}` },
   }
 }
 
@@ -30,7 +30,7 @@ export default async function EmitterPage({ params }: Props) {
   if (!product) notFound()
   return (
     <main className="xr-main xr-indust xp-page xe-detail">
-      <nav className="xi-wrap xe-breadcrumb" aria-label="Breadcrumb"><Link href="/#products">Products</Link><span aria-hidden="true">/</span><Link href="/drip-emitters">Drip Emitters</Link><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
+      <nav className="xi-wrap xe-breadcrumb" aria-label="Breadcrumb"><Link href="/#products">Products</Link><span aria-hidden="true">/</span><Link href="/drippers">Drippers</Link><span aria-hidden="true">/</span><span aria-current="page">{product.name}</span></nav>
       <section className="xi-wrap xp-hero" aria-labelledby="emitter-title">
         <div className="xp-hero-copy">
           <p className="xi-eyebrow">{product.tag}</p>
@@ -46,7 +46,7 @@ export default async function EmitterPage({ params }: Props) {
           <section><h2>Product features</h2><ul className="xp-advantages">{product.features.map((feature) => <li key={feature}>{feature}</li>)}</ul></section>
           <section><h2>Application &amp; specifications</h2><dl className="xp-specifications xe-specifications">{product.specifications.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p className="xe-spec-note">Confirm the selected model, flow rate and compatibility with your tape or tubing before ordering.</p></section>
           {product.images > 1 && <section><h2>Product details</h2><div className="xe-gallery">{Array.from({ length: product.images - 1 }, (_, i) => <Image unoptimized key={i} src={emitterImage(product.sourceId, i + 2)} alt={`${product.name} — detail ${i + 1}`} width={800} height={600} sizes="(max-width: 900px) 88vw, 45vw" />)}</div></section>}
-          <Link className="xi-button" href="/drip-emitters">Explore all drip emitters <span aria-hidden="true">↗</span></Link>
+          <Link className="xi-button" href="/drippers">Explore all drippers <span aria-hidden="true">↗</span></Link>
         </div>
         <aside className="xp-inquiry" id="emitter-inquiry" aria-labelledby="inquiry-title">
           <h2 id="inquiry-title">Find the right emitter<br />for your project</h2>
